@@ -5,6 +5,7 @@ import {
   Image,
   StyleSheet,
 } from '@hippy/react';
+import { UImage } from "hippy_ui_react"
 
 // Import the image to base64 for defaultSource props.
 import defaultSource from './defaultSource.jpg';
@@ -84,6 +85,27 @@ export default class ImageExpo extends React.Component {
           defaultSource={defaultSource}
           source={{ uri: imageUrl }}
           resizeMode={Image.resizeMode.cover}
+        />
+        <Text style={styles.info_style}>UImage:</Text>
+        <UImage
+          style={[styles.image_style]}
+          src={imageUrl}
+        />
+        <Text style={styles.info_style}>UImageOnPress:</Text>
+        <UImage
+          style={[styles.image_style]}
+          src={imageUrl}
+          onPress={(e) => {
+            console.log('UImageOnPress onPress', e);
+          }}
+        />
+        <Text style={styles.info_style}>UImageOnLayout:</Text>
+        <UImage
+          style={[styles.image_style]}
+          src={imageUrl}
+          onLayout={(e) => {
+            console.log('UImageOnLayout onLayout', e);
+          }}
         />
         <Text style={styles.info_style}>Center:</Text>
         <Image
