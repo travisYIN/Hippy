@@ -6,7 +6,7 @@ import {
 const styles = {
   container: {
     flex: 1,
-    paddingHorizontal: 16,
+    // paddingHorizontal: 16,
     backgroundColor: '#E5E5E5',
   },
 };
